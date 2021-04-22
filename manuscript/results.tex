@@ -1,0 +1,221 @@
+%-----------------------------------------------------------------
+\section{Results -- Evidence of a gender wage gap}
+%-----------------------------------------------------------------
+\subsection{Determinantes de los salarios}
+%-----------------------------------------------------------------
+Para inspeccionar el impacto del género en la determinación del salario y la posible discriminación basada en el género, estimo ecuaciones salariales inicialmente utilizando la muestra combinada de hombres y mujeres, y luego, realizando una estimación de los determinantes salariales por género mientras se controla por sesgo de variable omitida con un modelo con efectos fijos. Comparé el modelo de efectos fijos con un efecto aleatorio utilizando la prueba de Hausman, lo que resultó en que el modelo de efectos fijos es el modelo preferido.
+
+Como resultado del modelo inicial de MCO, la variable dummy femenina tiene un efecto significativo y negativo sobre el logaritmo del ingreso laboral neto promedio. Por lo tanto, ser mujer reduce el ingreso laboral neto promedio en aproximadamente un 20 por ciento. Además, estar casado tiene un efecto positivo y significativo en los ingresos de alrededor del 8 por ciento. La dummy para madre es insignificante, mientras que ser padre tiene un efecto significativo y positivo de alrededor del 8 por ciento en los ingresos laborales. Además, haber estado desempleado, fuera de la fuerza laboral o inactivo en el trimestre anterior tiene un efecto significativo y negativo en los ingresos, reduciéndolos en aproximadamente un 30 por ciento.
+
+Otras variables de control como la edad, la edad al cuadrado, la situación laboral, la asistencia a la escuela y las variables dummy que muestran que el hogar recibe ingresos no laborales como los programas sociales y de pensiones, son significativas y muestran direcciones y magnitudes según lo predicho por la literatura. En el cuadro 2b del apéndice se pueden encontrar más detalles de las ecuaciones salariales, incluidos los coeficientes para todas las variables de control.
+%
+%-----------------------------------------------------------------
+% Tab 1
+%-----------------------------------------------------------------
+\begin{table}[H]
+    \singlespacing
+	\small
+	\centering 
+	\begin{adjustbox}{max width=\textwidth}
+		\begin{threeparttable}
+			\caption{Ecuaciones de Mincer}
+			\label{tab:mincer}
+			\begin{tabular}{@{}l*{6}{c}@{}}
+				\toprule
+				 		        					& 
+				\multicolumn{3}{c}{MCO Agruado} 	&
+				\multicolumn{3}{c}{Efectos Fijos}	\\ \cmidrule(lr){2-4} \cmidrule(l){5-7}
+                     	 			&
+                Muestra total    	&
+                Mujeres 			&
+                Hombres 			&
+                Muestra total 		&
+                Mujeres       		&
+                Hombres         	\\
+				Variables			&
+				(1) 				& 
+				(2) 				& 
+				(3) 				& 
+				(4) 				& 
+				(5) 				& 
+				(6) 				\\
+				\midrule
+                \primitiveinput{tables/mincer.tex}
+                                        	&    &    &    &    &    &        \\
+                 Controles Individuales    	& Si & Si & Si & Si & Si & Si     \\
+                 Controls Hogar     		& Si & Si & Si & Si & Si & Si     \\
+                 Controles oferta   		& Si & Si & Si & Si & Si & Si     \\			
+				\bottomrule
+			\end{tabular}
+			\begin{tablenotes}
+				\setlength\labelsep{0pt}
+				\footnotesize
+				\item \textit{Notas}: 
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+%
+En las regresiones de MCO por submuestra por género, se encuentra que la variable dummy de casado solo es significativa para los hombres, lo que aumenta sus ingresos laborales, pero no se observa lo mismo para el caso de las mujeres. Además, la variable dummy de padre siguió siendo significativa y se asoció positivamente con los ingresos, mientras que la dummy de la madre se volvió insignificante.
+
+No obstante, el modelo de efectos fijos muestra que los cambios en la maternidad, es decir, convertirse en madre, tiene un efecto significativo y negativo en los ingresos, lo que representa una reducción de alrededor del 15 por ciento. Por el contrario, los cambios en la variable dummy del padre no son significativos. Además, la interrupción en la permanencia en la fuerza laboral tiene un efecto significativo y negativo solo para las mujeres, lo que implica, en promedio, una reducción del 26 por ciento de los ingresos de las mujeres cuando están fuera de la fuerza laboral, desempleadas o inactivas en el trimestre anterior.
+%-----------------------------------------------------------------
+\subsection{Descomposiciones Blinder-Oaxaca}
+%-----------------------------------------------------------------
+Los métodos de descomposición son útiles para investigar más a fondo las diferencias en los salarios. El método Blinder-Oaxaca permite descomponer las diferencias salariales entre hombres y mujeres en una parte explicada por diferencias de características y una parte residual no explicada. El efecto de diferentes características productivas se denomina efecto dotación, y el residuo inexplicable, las diferencias en los coeficientes estimados para ambos grupos, a menudo se denomina "efecto de discriminación" \citep{Weichselbaumer2005}.
+
+En la estimación de la descomposición Blinder-Oaxaca, no puedo controlar las posibles violaciones al método. Por ejemplo, diferencias en la medición de productividad; los empleadores pueden tener una forma diferente de evaluar la productividad que la implementada en el modelo a través características observadas. Asimismo, las características observadas incluidas en el modelo también podrían verse afectadas por la "discriminación" y no ajusto las estimaciones para esta posible amenaza.
+
+Además, intento controlar los problemas de autoselección en la fuerza laboral usando la corrección de dos pasos de Heckman mientras modelo la participación en la fuerza laboral en función de la edad, el estado civil y el número de hijos. Sin embargo, este enfoque solo aborda cuestiones de selección de muestras impulsadas por las características observadas.
+
+Para investigar la posible triple penalización de género, maternidad e informalidad, realizo descomposiciones Oaxaca-Blinder con y sin corrección de Heckman para tres submuestras diferentes. Primero, una muestra que incluye a todos los hombres y mujeres, segundo, una muestra que incluye solo a madres y a los padres, y por último, una muestra que incluye solo a las madres y los padres del sector informal. Las características observadas controladas en los modelos son las mismas: edad, nivel educativo e industria en dos dígitos. El foco principal no está en las magnitudes de las brechas, sino en la dirección y la significancia estadística del efecto que la paternidad y la informalidad tienen sobre las diferencias salariales. Varios problemas potenciales, como el error de medición de salarios, podrían generar conclusiones engañosas sobre el tamaño de la brecha si analizáramos la magnitud de la penalidad. Sin embargo, asumí que no había diferencias sistemáticas en la medición de salarios entre las diferentes submuestras analizadas.
+
+Para la descomposición sin la corrección de Heckman, utilizo los salarios a nivel para ver las diferencias brutas. Sin embargo, los modelos definitivos con correcciones de autoselección se han estimado utilizando el logaritmo de los salarios como variables de resultado.
+
+Como se observa en todas las diferentes especificaciones, existe una diferencia salarial inexplicable. Para toda la muestra de hombres y mujeres en el modelo sin correcciones, la brecha salarial total es de alrededor del 44 por ciento, de las cuales las "dotaciones" de características individuales contribuyen a su reducción. En la muestra de madres y padres, la magnitud de la brecha salarial aumenta en comparación con toda la muestra y las dotaciones no contribuyen más a su reducción, lo que indica una posible penalización sobre la maternidad.
+
+Además, el análisis de descomposición para madres y padres en el sector informal muestra una reducción de la brecha salarial en comparación con la muestra completa de madres y padres. Sin embargo, esta reducción se debe principalmente a un aumento en la contribución de las dotaciones. Por tanto, esto último contribuye a reducir el efecto negativo de estar en el sector informal.
+
+El análisis de descomposición mediante correcciones de selección de muestras para hombres y mujeres arroja resultados similares, con una contribución de las dotaciones que reduce la brecha salarial. En el caso de la muestra de madres y padres, aún se observa una brecha salarial que aumenta con respecto a la brecha salarial de solo mujeres y hombres. A diferencia del modelo sin corrección, dotaciones como el nivel educativo y la industria contribuyen a reducir la brecha salarial entre padres y madres. En la tabla \ref{tab:oaxaca} se pueden encontrar más detalles de las descomposiciones Blinder-Oaxaca.
+%
+%-----------------------------------------------------------------
+% Tab 1
+%-----------------------------------------------------------------
+\begin{table}[H]
+    \singlespacing
+	\small
+	\centering 
+	\begin{adjustbox}{max width=\textwidth}
+		\begin{threeparttable}
+			\caption{Descomposición Oaxaca-Blinder}
+			\label{tab:oaxaca}
+			\begin{tabular}{@{}l*{6}{c}@{}}
+				\toprule
+				 		        															& 
+				\multicolumn{3}{c}{Descomposición Oaxaca-Blinder} 							&
+				\multicolumn{3}{c}{Descomposición Oaxaca-Blinder con corrección Heckman }	\\ 
+																							& 
+				\multicolumn{3}{c}{Outcome: salario (córdobas)} 							&
+				\multicolumn{3}{c}{Outcome: logaritmo del salario}							\\ \cmidrule(lr){2-4} \cmidrule(l){5-7}		
+									&
+				Hombre vs. Mujer	&
+				Padre vs. Madre 	& 
+				Padre vs. Madre 	& 
+				Hombre vs. Mujer	&
+				Padre vs. Madre 	& 
+				Padre vs. Madre 	\\
+									&
+									&
+									&
+				Sector Informal		& 
+									&
+									&
+				Sector Informal		\\ \cmidrule(lr){2-4} \cmidrule(l){5-7}	
+									&
+				(1) 				& 
+				(2) 				& 
+				(3) 				& 
+				(4) 				& 
+				(5) 				& 
+				(6)					\\      
+				\midrule
+                \primitiveinput{tables/oaxaca.tex}	
+				\bottomrule
+			\end{tabular}
+			\begin{tablenotes}
+				\setlength\labelsep{0pt}
+				\footnotesize
+				\item \textit{Notas}: \textit{T}-statistics are reported in parentheses.
+				\item \sym{***} Significant at the 1 percent level.
+				\item \sym{**} Significant at the 5 percent level. 
+				\item \sym{*} Significant at the 10 percent level.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+%
+Los resultados de la descomposición de la muestra de padres y madres del sector informal muestran un aumento de la brecha salarial con respecto a la muestra total y la muestra de padres y madres únicamente. La contribución de las dotaciones impulsa los cambios después de controlar los problemas de selección. Por tanto, la informalidad implica una penalización adicional para las mujeres después de controlar la participación laboral.
+
+Las características observadas generan los cambios en los modelos con y sin corrección por selección de la muestra. Por ejemplo, la presencia de mujeres y madres educadas en el sector informal sesga las estimaciones de la brecha salarial si no se controla autoselección. Por lo tanto, ser madre y estar en el sector informal representa penalidades adicionales en términos de diferencias salariales en comparación con sus pares masculinos y padres.
+
+%-----------------------------------------------------------------
+\subsection{Matrices de transición de cadena de Markov}
+%-----------------------------------------------------------------
+La pregunta que surge es si esas mujeres y madres se auto-seleccionan en este sector informal o si es resultado de la falta de trabajos formales. Aunque esta pregunta requiere una investigación más exhaustiva y estrategias de identificación avanzadas, tengo la intención de proporcionar información sobre los patrones de movilidad de las mujeres y las madres en comparación con sus pares en diferentes situaciones laborales.
+
+Las probabilidades de transición de las matrices de Markov pretenden aproximar la movilidad y absorción de diferentes estados laborales como la voluntad o el efecto residual de las decisiones del mercado laboral. Por ejemplo, observar una alta movilidad entre las mujeres que inicialmente ingresaron a un trabajo formal pero luego pasaron a un trabajo informal o al desempleo o inactividad podría indicar la disposición y el deseo de trabajos y horarios más flexibles. Sin embargo, estos resultados no son causales y son simplemente el reflejo de los patrones de movilidad de los individuos en la muestra. En la tabla \ref{tab:matrices} se pueden encontrar más detalles de las matrices de transición de la cadena de Markov.
+%-----------------------------------------------------------------
+\subsection{Transiciones por sexo}
+%-----------------------------------------------------------------
+Las mujeres inicialmente observadas en trabajos informales tienen un 58 por ciento de probabilidad de permanecer en este estado, un 15 por ciento de convertirse en trabajadoras informales por cuenta propia y un 16 por ciento de dejar la fuerza laboral. Los hombres presentan patrones similares, pero en lugar de salir de la fuerza laboral, el 25 por ciento pasa de asalariados informales a cuenta propia informal.
+
+Por otro lado, los trabajadores asalariados formales parecen ser un estado absorbente para las mujeres; una vez que ingresan a un trabajo formal, el 91 por ciento de ellas permanece en estos trabajos, solo el 3 por ciento pasa a trabajadores asalariados informales. Los hombres, por el contrario, una vez que ingresan a un puesto asalariado formal, el 6 por ciento de ellos pasa al trabajador asalariado informal y el 89 permanece como formal. De manera similar, el trabajador informal por cuenta propia parece ser un estatus absorbente para hombres y mujeres; El 78 de los hombres y el 77 por ciento de las mujeres que ingresan a esos trabajos permanecen en ellos.
+
+Asimismo, el desempleo y los inactivos o fuera de la fuerza laboral tienen una probabilidad de permanencia similar para hombres y mujeres; sin embargo, el tipo de trabajo a los que transitan posteriormente difiere. La mayoría de los hombres que estaban desempleados o inactivos pasaron a ser trabajadores asalariados informales, mientras que para las mujeres, el 17 por ciento de los desempleadas y el 20 por ciento de los inactivas pasaron a ser cuenta propista informal. Este resultado podría estar en línea con las diferencias observadas en el sector informal evidenciadas en la descomposición Blinder-Oaxaca.
+%-----------------------------------------------------------------
+\subsection{Transiciones por paternidad}
+%-----------------------------------------------------------------
+Para las madres, se observan patrones similares en el estatus formal asalariado, el 91 por ciento de las madres inicialmente observadas en este tipo de trabajo permanecieron allí. En el caso de las trabajadoras asalariados informales, el 19 por ciento pasó a ser cuenta propista informal y solo el 16 por ciento pasó a estar desempleada o inactiva, cifra menor que el 21 por ciento observado para toda la muestra.
+
+Curiosamente, la probabilidad de permanecer desempleadas o inactivas se reduce para las madres en comparación con las mujeres no madres, con un aumento en las transiciones hacia asalariados informales, pero principalmente hacia trabajadores informales por cuenta propia. Los padres también reducen sus probabilidades de permanecer desempleados o inactivos, aumentando ahora las transiciones hacia trabajadores por cuenta propia.
+
+Los trabajos formales para las mujeres y sobre todo para las madres parecen ser el estado preferido y absorbente. Asimismo, las madres salen del desempleo y la inactividad con mayor frecuencia en comparación con las transiciones de las mujeres al usar toda la muestra.
+%
+%-----------------------------------------------------------------
+% Tab 3
+%-----------------------------------------------------------------
+\begin{table}[H]
+    \singlespacing
+	\small
+	\centering 
+	\begin{adjustbox}{max width=\textwidth}
+		\begin{threeparttable}
+			\caption{Matrices de transición de la cadena de Markov para mujeres y hombres y padres y madres}
+			\label{tab:matrices}
+			\begin{tabular}{@{}l*{6}{c}@{}}
+				\toprule
+									&
+				\multicolumn{2}{c}{Asalariado}		&
+				\multicolumn{2}{c}{Cuentapropista}	&
+				Desempleo			&
+				Fuera de la 		\\
+									&
+				Informal			&
+				Formal				&
+				Informal			&
+				Formal				&
+									&
+				Fuerza Laboral		\\ \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+				Clasificación de ocupación		&
+				(1) 				& 
+				(2) 				& 
+				(3) 				& 
+				(4) 				& 
+				(5) 				& 
+				(6) 				\\
+				\midrule				
+				$Periodo~t$ 				&
+				\multicolumn{6}{c}{$Periodo~t + 1$} \\
+				\cmidrule{2-7}
+				\multicolumn{7}{@{}l}{\textit{Panel A. Hombres}}			\\
+				\primitiveinput{tables/markow_sex_0.tex}	
+				[0.5em]
+				\multicolumn{7}{@{}l}{\textit{Panel B. Mujeres}}			\\				
+                \primitiveinput{tables/markow_sex_1.tex}	
+				[0.5em]
+				\multicolumn{7}{@{}l}{\textit{Panel C. Padres}}				\\
+				\primitiveinput{tables/markow_motandfat_0.tex}	
+				[0.5em]
+				\multicolumn{7}{@{}l}{\textit{Panel D. Madres}}				\\				
+                \primitiveinput{tables/markow_motandfat_1.tex}					
+				\bottomrule
+			\end{tabular}
+			\begin{tablenotes}
+				\setlength\labelsep{0pt}
+				\footnotesize
+				\item \textit{Notas}: 
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+%

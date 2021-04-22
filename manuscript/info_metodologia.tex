@@ -1,0 +1,50 @@
+%-----------------------------------------------------------------
+\section{Datos y metodología}
+%-----------------------------------------------------------------
+Utilizo los datos longitudinales de la Encuesta Continua de Hogares (ECH) para estimar los modelos descritos en este documento. La ECH recopila trimestralmente información sobre las condiciones socioeconómicas y del mercado laboral con un panel rotativo en más de siete mil hogares enfocados en la fuerza laboral activa. Es representativo del nivel rural y urbano y proporciona suficiente información sobre trabajadores formales e informales.
+
+La fuente principal de información de las siguientes estimaciones son las bases de datos de los cuatro trimestres de 2012. La unidad de análisis aplicada son los individuos pertenecientes a la fuerza laboral, que contienen personas entre 14 y 65 años (80,863 observaciones). El intervalo de edad ha sido definido de acuerdo a la edad mínima utilizada a nivel nacional para definir la fuerza laboral por el Banco Central de Nicaragua y el INIDE \citep{BCN2009}.
+
+La principal variable de análisis es salarios, la cual se refiere a todos los ingresos laborales de las ocupaciones primarias y secundarias, y se ha construido a partir de la información recopilada por la encuesta. La encuesta no incluye información directa sobre las madres. Por lo tanto, codifico como madre a una mujer que es pareja del jefe de familia o que es la jefa de familia cuando hay hijos en el hogar. Los padres se codifican de manera similar. Las interrupciones de trabajo se codifican utilizando las características del panel. La variable dummy para interrupciones laborales toma un valor de uno cuando un individuo en el trimestre anterior de la encuesta estaba desempleado, fuera de la fuerza laboral o inactivo y en la encuesta actual ha cambiado a otro tipo de situación laboral en la actividad.
+
+El estado laboral ha sido analizado de acuerdo con la XIX Conferencia Internacional de Estadísticos del Trabajo (CIET) \citep{ILO2013}, ya que las características de la encuesta ECH lo permiten. La informalidad y la clasificación de cada uno de los estados laborales se han medido según la 17ª CIET \citep{ILO2013}. La clasificación de la industria se ha elaborado utilizando las Naciones Unidas (\citeyear{Nations2008}) y la Organización para la Cooperación y el Desarrollo Económicos \citep{OECD1997}.
+
+Las estimaciones primarias aplicadas en este estudio tienen como objetivo proporcionar evidencia sobre la existencia de una brecha salarial de género en Nicaragua, así como resaltar sus magnitudes y posibles factores asociados con la misma. Dichas estimaciones son: i) determinantes de los salarios mensuales y ii) una descomposición Blinder-Oaxaca. Ambas estimaciones también analizan las diferencias de género para diferentes estatus de formalización. Además, para estudiar una de las potenciales causas de la penalidad de maternidad, mujeres optando por "trabajos flexibles", iii) estimo matrices de transición que siguen un proceso de transición de Markov para proporcionar evidencia sobre la movilidad laboral de mujeres y madres.
+
+Se implementan ecuaciones salariales à la Mincer para los ingresos mensuales. La primera estimación es un MCO utilizando una muestra que incluye a hombres y mujeres, con la intención de proporcionar evidencia inicial del impacto del género en la determinación de los salarios, seguida de modelos separados para hombres y mujeres. Las ecuaciones salariales incluyen variables individuales, del hogar y del lado de la oferta y se expresan de la siguiente manera:
+%
+\begin{equation}
+    LnWages_{it} = \beta_{0} + \beta_{1} X'_{it} + \beta_{2} X'_{ht} + \beta_{3} X'_{st} + \varepsilon_{it}, 
+\end{equation}
+%
+El conjunto principal de variables de control incluye variables a nivel individual y del hogar $\beta X'_{it}$, específicamente la situación laboral de acuerdo con la clasificación de la OIT, edad, edad al cuadrado, área de residencia, un dummy de casado, nivel educativo, industria, un dummy de madre, un dummy de padre, un dummy que representa la interrupción del trabajo, indicando aquellos que estuvieron el trimestre anterior fuera de la fuerza laboral, inactivos o desempleados, y un dummy para quienes están actualmente estudiando o en capacitación. A nivel de hogar $\beta X'_{ht}$, incluyo los siguientes controles: número de hijos y variables dummy para un hogar que recibe remesas, pensión y beneficiario de programas de escuelas públicas y tamaño del hogar. Asimismo, incluyo variables dummy (efectos fijos) para los estratos económicos identificados en el marco muestral y para cada uno de los trimestres de la encuesta para controlar por características socioeconómicas o posibles choques idiosincrásicos en el área de residencia o en el tiempo (trimestres).
+
+Posteriormente, estimo las mismas ecuaciones salariales utilizando efectos fijos individuales con el objetivo de controlar por el sesgo inducido por variables no observadas como lo es la diferencia en habilidades de los trabajadores que podría sesgar las estimaciones de MCO \citep{Angrist2008}. Las ecuaciones salariales con efectos fijos están estimadas usando las siguiente especificación:
+%
+\begin{equation}
+    LnWages_{it} = \alpha_{i} + \gamma_{t} + \beta_{0} X_{it} + \beta_{1} X_{ht} + \beta_{2} X_{st} + \varepsilon_{it}, 
+\end{equation}
+%
+\noindent $\alpha_{i} = \alpha + A'_{i}\delta$, representa efectos individuales no observados, es decir, coeficientes sobre variables dummy para cada individuo \citep{Angrist2008}.
+
+Las estimaciones de las brechas salariales de género se realizan siguiendo el trabajo de \citet{Blinder1973} y \citet{Oaxaca1973} quienes propusieron un procedimiento de descomposición que divide el diferencial salarial entre dos grupos, una parte que se "explica" por las diferencias grupales en las características de productividad, tales como como educación, y una parte residual que no puede explicarse por tales diferencias en los determinantes salariales. Esta parte "inexplicable" se utiliza a menudo como una medida de discriminación, pero también incluye los efectos de las diferencias de grupo en predictores no observados \citep{Jann2008}.
+
+Con base en las ecuaciones salariales iniciales, la descomposición de Oaxaca-Blinder se puede expresar de la siguiente manera:
+%
+\begin{equation}
+    \overline{W}_{m} - \overline{W}_{f} = (\overline{X}_{m} - \overline{W}_{f})\hat{\beta}_{m} + (\hat{\beta}_{m} - \hat{\beta}_{f})\overline{X}_{f} = E + U 
+\end{equation}
+%
+\noindent Donde $\overline{W}_{m} - \overline{W}_{f}$ denota el logaritmo medio de los salarios y las características de control para cada grupo. Esta diferencia equivale a dos términos, un primer término que representa el efecto de diferentes características productivas $(\overline{X}_{m} - \overline{W}_{f})\hat{\beta}_{m}$, y el segundo término representa el residual no explicado $(\hat{\beta}_{m} - \hat{\beta}_{f})\overline{X}_{f}$, las diferencias en los coeficientes estimados para ambos grupos se denomina generalmente efecto de discriminación \citep{Weichselbaumer2005}.
+
+La descomposición inicial del salario se presenta para una muestra combinada de individuos que analizan a los hombres y mujeres con características similares, seguida de un análisis de descomposición por paternidad y estatus de formalización. Estos modelos pretenden proporcionar estimaciones brutas del diferencial salarial y sus componentes. No obstante, los salarios solo se observan para las personas que participan en la fuerza laboral, lo que genera posibles problemas de autoselección. Por lo tanto, para controlar este problema, utilizo los procedimientos de corrección de selección de muestras propuestos por \citep{Heckman1979}. Este procedimiento implicó la modelización de la participación laboral en función de la edad, el estado civil y el número de hijos.
+
+Para investigar la probabilidad de transitar entre diferentes estatus laborales, el estatus flexible y no flexible (aproximados como empleos formales e informales), se estimaron matrices de transición intertrimestrales que brindan una impresión general de los patrones de movilidad laboral por género y estatus parental. Según \citet{Nichols2014}, una matriz de transición tiene como objetivo medir un estado en el tiempo $t-1$ y nuevamente en el tiempo $t$. La matriz de transición es un proceso de Markov que estima la probabilidad condicional de encontrar un trabajador en un estado $j$ en el tiempo $t$, condicionado al hecho de que el individuo estaba en el estado $i$ en el tiempo $t-1$. La suma de los elementos en cada fila de la matriz de transición es igual a 1, mientras que la diagonal representa la permanencia en el estado laboral original, lo que ayuda a ilustrar aquellos estados laborales con mayor persistencia.
+
+Las matrices de transición se determinan de la siguiente manera:
+%
+\begin{equation}
+    p_{ij}(t, t + 1) = Pr(X_{t + 1} = j | X_{t} = i)   
+\end{equation}
+%
+Las matrices de transición se estiman con un panel desbalanceado de la ECH con datos de los cuatro trimestres de 2012, para lo cual se aplicaron métodos para rectangularizar los datos en el software estadístico con el fin de obtener matrices de transiciones de Markov. Para estas matrices, se consideraron seis clasificaciones de situación laboral: trabajadores formales asalariados, trabajadores informales, autónomos / trabajadores por cuenta propia, autónomos informales / trabajadores por cuenta propia informal, desempleados y fuera de la fuerza laboral o población inactiva.\footnote{Fuera de la fuerza laboral y población inactiva fueron combinados debido al pequeño tamaño de la muestra de población inactiva.}
